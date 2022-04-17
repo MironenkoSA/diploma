@@ -1,25 +1,20 @@
 body {
-  width: 100%;
-  height: 120%;
+/*  width: 100vw;
+  height: 120vh;*/
   font-size: 16px;
   font-family: "Arial", sans-serif;
   color: #DEE0ED;
   background: #E9ECF0;
-  /*overflow: hidden;*/
+  overflow-x: hidden;
   margin: 0%;
 }
 
-/*div {
-  margin: 20px;
-  padding: 25px;
-}*/
-
 body  > .header{
-   width:100%;
-   height:30%;
+   /*width:99vw;
+   height:4.5vw;*/
    display: flex;
    background-color: #0A1744;
-   align-items: center;
+   /*align-items: center;*/
    overflow: hidden;
 	
 }
@@ -29,15 +24,28 @@ body  > .header{
 	height:100%;
 	/*margin-left:10%;*/
 	/*background-color:blue;*/
-	border:1px solid black;
-
+	/*border:1px solid black;*/
+	font-size: 18px;
+    display: flex;
 }
 
+.header_info{
+    text-align: left;
+    margin-top: 0.7vh;
+}
 .text{
 	text-align:center;
+
 }
 
-body > .info{
+.logo{
+    background-image: url(C:\Users\cthul\Desktop\diploma\logo2.jpg);
+    width:100px;
+    height:100px;
+    border:1px solid black;
+}
+
+/*body > .info{
    width:100%;
    height:30px;
    display: flex;
@@ -48,28 +56,31 @@ body > .info{
 .info > .info_card{
 	width:20%;
 	height:100%;
-	/*margin-left:10%;*/
-	/*background-color:blue;*/
 	border:1px solid black;
-}
+}*/
 
 body > .slider{
-	width:100%;
-	height:300px;
+	width:80vw;
+	height: 55vh;
+	margin-left: auto;
+	margin-right: auto;
 	background-color: aqua;
 }
 
 body > .advantages{
-	width:80%;
-	height:30%;
+	width:80vw;
+	height:50vh;
 	display: flex;
 	/*background-color:purple;*/
-	margin-left:10%
+	margin-left:auto;
+	margin-right: auto;
+	/*border:1px solid black;*/
+    margin-top: 1%;
 }
 
 .advantages > .advantages_box{
-	width: 15%;
-	height: 15%;
+	width: 15vw;
+	height: 10vh;
 	display: flex;
 	position: relative;
 	/*align-items: center;*/
@@ -80,6 +91,7 @@ body > .advantages{
 	justify-content: center;
 	align-items: center;
 	font-size:23px;
+	margin-top:8vh;
 }
 
 	
@@ -90,11 +102,7 @@ body > .advantages{
 
 .cards_other{
 	margin-top: 0%;
-	margin-left: 13%;
-}
-
-.logo{
-	background-image:url('');
+	margin-left: 10%;
 }
 
 
@@ -103,7 +111,7 @@ body > .footer {
 	height: 70px;
 	background-color: #131317;
 	border-top: 1px solid #aaaaaa;
-	margin-top: 23.3%;
+	margin-top: 15%;
 }
 
 .space{
@@ -125,4 +133,124 @@ body > .footer {
 
 .email1{
 	
+}
+
+
+
+
+/* Собственно сам слайдер */
+.slider{
+    max-width: 90%;
+    position: relative;
+    margin: auto;
+    height: 300px;
+    margin-bottom: 15px;
+}
+/* Картинка мастабируется по отношению к родительскому элементу */
+.slider .item img {
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
+    border: none !important;
+    box-shadow: none !important;
+}
+/* Кнопки вперед и назад */
+.slider .prev, .slider .next {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+.slider .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+/* При наведении на кнопки добавляем фон кнопок */
+.slider .prev:hover,
+.slider .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+/* Заголовок слайда */
+.slideText {
+    position: absolute;
+    color: #fff;
+    font-size: 35px;
+    /* Выравнивание текста по горизонтали и по вертикали*/
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* Тень*/
+    text-shadow: 1px 1px 1px #000, 0 0 1em #000;
+}
+/* Кружочки */
+.slider-dots {
+    text-align: center;
+}
+.slider-dots_item{
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 2px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active,
+.slider-dots_item:hover {
+    background-color: #aaa;
+}
+/* Анимация слайдов */
+.slider .item {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.portfolio{
+width: 90vw;
+height: 120vh;
+border:1px solid black;
+margin-right: auto;
+margin-left: auto;
+margin-top: 2vh;
+}
+
+.port_text{
+    width: 90vw;
+    height: 15vh;
+    border:1px solid black;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2vh;
+}
+
+.port_table{
+    width: 100%;
+    color: black;
 }
